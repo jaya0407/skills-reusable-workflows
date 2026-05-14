@@ -1,0 +1,15 @@
+on:
+    workflow_call:
+            inputs:
+                        node:
+                                        required:  true                type:  string
+                                        jobs:
+                                        build:
+                                           runs-on: ubuntu-latest
+
+                                           steps:
+                                           -uses: actions/checkout@v4
+
+                                           - name: Output the input values
+                                           run:
+                                             echo "The node version to use is: ${{input.node}}
